@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Geb hover example</title>
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
+</head>
+<body>
+<ul>
+    <li>Milk</li>
+</ul>
+
+<script>
+    $("li").hover(
+            function () {
+                $(this).append($("<span class='on-mouse-over'> ***</span>"));
+            }, function () {
+                $(this).find("span:last").remove();
+            }
+    );
+</script>
+</body>
+</html>

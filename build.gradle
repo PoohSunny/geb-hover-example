@@ -1,0 +1,22 @@
+ext {
+    groovyVersion = '2.4.5'
+    gebVersion = '0.13.1'
+    seleniumVersion = '2.51.0'
+}
+
+apply plugin: "groovy"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile "org.gebish:geb-spock:$gebVersion"
+    testCompile("org.spockframework:spock-core:1.0-groovy-2.4") {
+        exclude group: "org.codehaus.groovy"
+    }
+    testCompile "org.codehaus.groovy:groovy-all:$groovyVersion"
+
+    // Drivers
+    testCompile "org.seleniumhq.selenium:selenium-chrome-driver:$seleniumVersion"
+}
